@@ -26,8 +26,8 @@ const People = () => {
                                     <li>Hair Color: {character.hair_color}</li>
                                     <li>Eye Color: {character.eye_color}</li>
                                 </p>
-                                <Link to={character.url.match(/\d+/)[0]}>
-                                    <button className="btn btn-secondary" size="sm">
+                                <Link to={"/people/"+character.url.match(/\d+/)[0]}>
+                                    <button className="btn btn-primary" size="sm">
                                         Learn more!
                                     </button>
                                 </Link>

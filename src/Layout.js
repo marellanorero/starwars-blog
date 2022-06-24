@@ -7,6 +7,7 @@ import Home from './views/Home';
 import People from './views/People';
 import Planets from './views/Planets';
 import Person from './views/Person';
+import Planet from './views/Planet';
 
 
 const Layout = () => {
@@ -14,7 +15,8 @@ const Layout = () => {
         <BrowserRouter>
         <Navbar />
         <Switch>
-             <Route path={'/people/:id'} component={Person}/>
+            <Route path={"/planet/:id"} component={Planet}/>
+            <Route path={"/people/:id"} component={Person}/>
             <Route  path={"/people"} component={People}></Route>   
             <Route  path={"/planets"} component={Planets}></Route>
             <Route exact path={"/"} component={Home}></Route>
