@@ -14,10 +14,14 @@ const Planets = () => {
     return (
         <>
             <h1 className="mt-5 mb-5">PLANETS</h1>
+            <div className="container">
+                <div className="row">
+                 
             {
                 store.planets.map((planet, index) => {
                     return (
-                        <div className="card col-md-4 mb-2" key={index} >
+                        <div className="col-sm-12 col-md-6 col-lg-4">
+                        <div className="card mb-2" key={index} >
 
                             <div className="card-body">
                                 <h5 className="card-title">{planet.name}</h5>
@@ -33,9 +37,13 @@ const Planets = () => {
                                     <button className="btn btn-secondary" onClick={() => actions.addFavorites(planet)}><FaHeart /></button>
                             </div>
                         </div>
+                        </div>
                     )
                 })
             }
+               
+               </div>
+            </div>
         </>
     )
 }
