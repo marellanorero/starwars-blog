@@ -1,5 +1,15 @@
+import { useContext, useEffect } from 'react';
+import { Context } from '../store/appContext';
 import { Link } from 'react-router-dom'
 const Navbar =() => {
+
+    const {store, actions} = useContext(Context);
+
+    useEffect(() => {
+		
+	}, [])
+
+
     return(
         <>
             <nav className="navbar navbar-expand-lg navbar-light bg-light">
@@ -15,7 +25,14 @@ const Navbar =() => {
                                    Favoritos
                                 </a>
                                 <ul className="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                    
+                                    {
+                                        store.favorites.map((item, index) => {
+                                            return (
+                                                <a key={index} href="#/action-1">{item.name}
+                                                    <button className="btn btn-secondary" onClick={() => actions.filterFavorites(item)}> X </ button> </a>
+                                            )
+                                        })
+                                    }
                                 </ul>
                             </li>
                         </ul>

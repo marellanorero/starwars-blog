@@ -5,6 +5,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 			planets: [],
 			person: null,
             planetDetail: null,
+			favorites: [],
         },
         actions: {
             getCharacters: () => {
@@ -47,6 +48,24 @@ const getState = ({ getStore, getActions, setStore }) => {
 						)
 					.catch(error => console.log(error))
 			},
+			addFavorites: item => {
+			const {favorites} = getStore();
+			   if(favorites.find((fav)=> fav === item)){
+				   console.log('encontrado')
+			   } else {
+				   favorites.push(item);
+				   setStore({favorites})
+			   }
+
+			   
+		   },
+		   filterFavorites: item => {
+			const {favorites} = getStore();
+			   let filtered = favorites.filter((fav) => 
+				   fav !== item
+			   )
+			   setStore({favorites: filtered});
+		   },
         }
     }
 }

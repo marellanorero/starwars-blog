@@ -8,6 +8,7 @@ import People from './views/People';
 import Planets from './views/Planets';
 import Person from './views/Person';
 import Planet from './views/Planet';
+import NotFound from './views/notFound'
 
 
 const Layout = () => {
@@ -20,7 +21,7 @@ const Layout = () => {
             <Route  path={"/people"} component={People}></Route>   
             <Route  path={"/planets"} component={Planets}></Route>
             <Route exact path={"/"} component={Home}></Route>
-            
+            <Route component={NotFound}></Route>
         </Switch>
         </BrowserRouter>
     )
