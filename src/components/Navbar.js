@@ -26,6 +26,9 @@ const Navbar = () => {
                             <li class="nav-item">
                                 <Link className="nav-link" to="/planets">Planets</Link>
                             </li>
+                            <li class="nav-item">
+                                <Link className="nav-link" to="/vehicles">vehicles</Link>
+                            </li>
                             <li className="nav-item dropdown">
                                 <a className="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                     Favoritos
