@@ -4,11 +4,9 @@ const Home = () => {
     return(
         <>
             <div className="container text-center">
-                <hr />
-                <Link className="home text-secondary fs-1 text-decoration-none" to="/people">People</Link>
-                <hr />
-                <Link className="home text-secondary fs-1 text-decoration-none" to="/planets">Planets</Link>
-                <hr />
+                <img src='https://cdn.pocket-lint.com/r/s/970x/assets/images/147767-tv-feature-what-order-should-you-watch-all-the-star-wars-films-image1-1wdfjceytb.jpg'></img>
+                <h5 className='text-danger mt-5'>Hace mucho tiempo en una galaxia muy lejana ...</h5>
+                <h2 className='text-danger mt-2 mb-5'>Bienvenidos a StarWars Bank</h2>
             </div>
         </>
     )

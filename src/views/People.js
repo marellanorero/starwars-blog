@@ -13,8 +13,9 @@ const People = () => {
 
     return (
         <>
+            
+            <div className="container mb-5">
             <h1 className="mt-5 mb-5">PEOPLE</h1>
-            <div className="container">
                             <div className="row">
             {
                 store.characters.map((character, index) => {

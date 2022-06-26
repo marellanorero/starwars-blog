@@ -1,18 +1,18 @@
 import { useContext, useEffect } from 'react';
 import { Context } from '../store/appContext';
 import { Link } from 'react-router-dom'
-const Navbar =() => {
+const Navbar = () => {
 
-    const {store, actions} = useContext(Context);
+    const { store, actions } = useContext(Context);
 
     useEffect(() => {
-		
-	}, [])
+
+    }, [])
 
 
-    return(
+    return (
         <>
-            <nav className="navbar navbar-expand-lg navbar-light bg-light">
+            <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
                 <div className="container-fluid">
                     <Link className="navbar-brand" to="/">Star Wars</Link>
                     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -20,16 +20,22 @@ const Navbar =() => {
                     </button>
                     <div className="collapse navbar-collapse" id="navbarNavDropdown">
                         <ul className="navbar-nav">
+                            <li class="nav-item">
+                                <Link className="nav-link active" to="/people">People</Link>
+                            </li>
+                            <li class="nav-item">
+                                <Link className="nav-link" to="/planets">Planets</Link>
+                            </li>
                             <li className="nav-item dropdown">
                                 <a className="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                   Favoritos
+                                    Favoritos
                                 </a>
                                 <ul className="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                                     {
                                         store.favorites.map((item, index) => {
                                             return (
-                                                <a key={index} href="#/action-1">{item.name}
-                                                    <button className="btn btn-secondary" onClick={() => actions.filterFavorites(item)}> X </ button> </a>
+                                                <a key={index} href="#/action-1" className='text-dark text-decoration-none'>{item.name}
+                                                    <button className="btn btn-secondary" onClick={() => actions.filterFavorites(item)}> X </ button></a>
                                             )
                                         })
                                     }
