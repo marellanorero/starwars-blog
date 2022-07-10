@@ -13,16 +13,16 @@ const Vehicles = () => {
 
     return (
         <>
-            
+
             <div className="container mb-5">
-            <h1 className="mt-5 mb-5">VEHICLES</h1>
-                            <div className="row">
-            {
-                store.vehicles.map((vehicle, index) => {
-                    return (
-                       
-                                <div className="col-sm-12 col-md-6 col-lg-4">
-                                    <div className="card mb-2" key={index} >
+                <h1 className="mt-5 mb-5">VEHICLES</h1>
+                <div className="row">
+                    {
+                        store.vehicles.map((vehicle, index) => {
+                            return (
+
+                                <div className="col-sm-12 col-md-6 col-lg-4" key={index}>
+                                    <div className="card mb-2"  >
                                         <div className="card-body">
                                             <h5 className="card-title">{vehicle.name}</h5>
                                             <p className="card-text">
@@ -30,7 +30,7 @@ const Vehicles = () => {
                                                 <li>Vehicle class: {vehicle.vehicle_class}</li>
                                                 <li>Manufacturer: {vehicle.manufacturer}</li>
                                             </p>
-                                            <Link to={"/vehicles/" + vehicle.url.match(/\d+/)[0]}>
+                                            <Link to={"/vehicles/"+vehicle.url.match(/\d+/)[0]}>
                                                 <button className="btn btn-primary" size="sm">
                                                     Learn more!
                                                 </button>
@@ -39,12 +39,12 @@ const Vehicles = () => {
                                         </div>
                                     </div>
                                 </div>
-                            
-                    )
-                })
-            }
+
+                            )
+                        })
+                    }
+                </div>
             </div>
-                        </div>
         </>
     )
 }

@@ -21,8 +21,8 @@ const People = () => {
                 store.characters.map((character, index) => {
                     return (
                        
-                                <div className="col-sm-12 col-md-6 col-lg-4">
-                                    <div className="card mb-2" key={index} >
+                                <div className="col-sm-12 col-md-6 col-lg-4" key={index} >
+                                    <div className="card mb-2" >
                                         <div className="card-body">
                                             <h5 className="card-title">{character.name}</h5>
                                             <p className="card-text">

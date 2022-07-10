@@ -10,6 +10,7 @@ import Person from './views/Person';
 import Planet from './views/Planet';
 import NotFound from './views/notFound'
 import Vehicles from './views/Vehicles';
+import Vehicle from './views/Vehicle';
 
 
 const Layout = () => {
@@ -17,8 +18,8 @@ const Layout = () => {
         <BrowserRouter>
         <Navbar />
         <Switch>
-            <Route path={"/vehicles/:id"} component={Vehicles}/>
-            <Route path={"/planet/:id"} component={Planet}/>
+            <Route path={"/vehicles/:id"} component={Vehicle}/>
+            <Route path={"/planets/:id"} component={Planet}/>
             <Route path={"/people/:id"} component={Person}/>
             <Route  path={"/vehicles"} component={Vehicles}></Route> 
             <Route  path={"/people"} component={People}></Route>   

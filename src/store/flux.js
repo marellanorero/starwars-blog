@@ -4,6 +4,7 @@ const getState = ({ getStore, getActions, setStore }) => {
             characters: [],
 			planets: [],
 			vehicles: [],
+			vehicleDetail: [],
 			person: null,
             planetDetail: null,
 			favorites: [],
@@ -55,6 +56,16 @@ const getState = ({ getStore, getActions, setStore }) => {
 					.then(data => 
 						setStore({
 							vehicles: data.results
+						})
+						)
+					.catch(error => console.log(error))
+			},
+			getVehicle: url => {
+				fetch(url)
+					.then(respuesta => respuesta.json())
+					.then(data =>
+						setStore({
+							vehicleDetail: data
 						})
 						)
 					.catch(error => console.log(error))

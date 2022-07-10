@@ -22,8 +22,8 @@ const Planets = () => {
             {
                 store.planets.map((planet, index) => {
                     return (
-                        <div className="col-sm-12 col-md-6 col-lg-4">
-                        <div className="card mb-2" key={index} >
+                        <div className="col-sm-12 col-md-6 col-lg-4" key={index}>
+                        <div className="card mb-2"  >
 
                             <div className="card-body">
                                 <h5 className="card-title">{planet.name}</h5>
@@ -31,7 +31,7 @@ const Planets = () => {
                                     <li>Population: {planet.population}</li>
                                     <li>Terrain: {planet.terrain}</li>
                                 </p>
-                                <Link to={"/planet/"+planet.url.match(/\d+/)[0]}>
+                                <Link to={"/planets/"+planet.url.match(/\d+/)[0]}>
                                     <button className="btn btn-primary" size="sm">
                                         Learn more!
                                     </button>

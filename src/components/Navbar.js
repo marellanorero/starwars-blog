@@ -5,11 +5,6 @@ const Navbar = () => {
 
     const { store, actions } = useContext(Context);
 
-    useEffect(() => {
-
-    }, [])
-
-
     return (
         <>
             <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -20,13 +15,13 @@ const Navbar = () => {
                     </button>
                     <div className="collapse navbar-collapse" id="navbarNavDropdown">
                         <ul className="navbar-nav">
-                            <li class="nav-item">
+                            <li className="nav-item">
                                 <Link className="nav-link active" to="/people">People</Link>
                             </li>
-                            <li class="nav-item">
+                            <li className="nav-item">
                                 <Link className="nav-link" to="/planets">Planets</Link>
                             </li>
-                            <li class="nav-item">
+                            <li className="nav-item">
                                 <Link className="nav-link" to="/vehicles">vehicles</Link>
                             </li>
                             <li className="nav-item dropdown">
@@ -37,8 +32,11 @@ const Navbar = () => {
                                     {
                                         store.favorites.map((item, index) => {
                                             return (
-                                                <a key={index} href="#/action-1" className='text-dark text-decoration-none'>{item.name}
-                                                    <button className="btn btn-secondary" onClick={() => actions.filterFavorites(item)}> X </ button></a>
+                                                <a key={index} href="#/action-1" className='text-dark text-decoration-none d-flex justify-content-between'>{item.name}
+                                                    <button className="btn " onClick={() => actions.filterFavorites(item)}> X </ button>
+                                                    <br />
+                                                </a>
+                                            
                                             )
                                         })
                                     }
